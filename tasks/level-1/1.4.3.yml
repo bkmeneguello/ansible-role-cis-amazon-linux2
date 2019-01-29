@@ -9,6 +9,8 @@
   register: sysconfig_init_1_4_3
   tags:
     - level-1
+    - section-1
+    - section-1.4
     - "1.4.3"
     - scored
 
@@ -19,6 +21,8 @@
   when: sysconfig_init_1_4_3.stat.exists is not defined or not sysconfig_init_1_4_3.stat.exists
   tags:
     - level-1
+    - section-1
+    - section-1.4
     - "1.4.3"
     - scored
 
@@ -30,6 +34,8 @@
   when: sysconfig_init_1_4_3.stat.exists is defined and sysconfig_init_1_4_3.stat.exists
   tags:
     - level-1
+    - section-1
+    - section-1.4
     - "1.4.3"
     - scored
 

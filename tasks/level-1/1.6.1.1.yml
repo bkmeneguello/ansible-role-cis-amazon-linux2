@@ -7,11 +7,25 @@
   yum:
     name: libselinux-python
     state: installed
+  tags:
+      - level-1
+      - section-1
+      - section-1.6
+      - section-1.6.1
+      - "1.6.1.1"
+      - scored
 
 - name: Install the SE Linux requirements - policycoreutils-python
   yum:
     name: policycoreutils-python
     state: installed
+  tags:
+      - level-1
+      - section-1
+      - section-1.6
+      - section-1.6.1
+      - "1.6.1.1"
+      - scored
 
 - name: 1.6.1.1 Ensure SELinux is not disabled in bootloader configuration (Scored)
   selinux:
@@ -20,5 +34,7 @@
   tags:
       - level-1
       - section-1
-      - "1.1.11"
+      - section-1.6
+      - section-1.6.1
+      - "1.6.1.1"
       - scored

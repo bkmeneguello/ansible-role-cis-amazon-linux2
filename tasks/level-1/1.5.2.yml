@@ -11,6 +11,8 @@
   ignore_errors: true
   tags:
     - level-1
+    - section-1
+    - section-1.5
     - "1.5.2"
     - not-scored
 
@@ -22,6 +24,8 @@
     - fail_on_manual_remediation_actions
   tags:
     - level-1
+    - section-1
+    - section-1.5
     - "1.5.2"
     - not-scored
 
@@ -33,6 +37,8 @@
     - not fail_on_manual_remediation_actions
   tags:
     - level-1
+    - section-1
+    - section-1.5
     - "1.5.2"
     - not-scored
 

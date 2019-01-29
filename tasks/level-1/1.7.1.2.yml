@@ -9,5 +9,8 @@
     dest: "/etc/issue"
   tags:
     - level-1
-    - 1.7.1.2
+    - section-1
+    - section-1.7
+    - section-1.7.1
+    - "1.7.1.2"
     - not-scored

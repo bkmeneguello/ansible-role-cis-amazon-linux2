@@ -9,9 +9,10 @@
   changed_when: False
   ignore_errors: true
   tags:
-    - "4.1.10"
     - level-2
     - section-4
+    - section-4.1
+    - "4.1.10"
     - scored
 
 
@@ -35,9 +36,10 @@
     ("'-a always,exit -F arch=b64 -S setxattr -S lsetxattr -S fsetxattr -S removexattr -S lremovexattr -S fremovexattr -F auid>=500 -F auid!=4294967295 -k perm_mod' not in perm_mod.stdout") or
     ("'-a always,exit -F arch=b32 -S setxattr -S lsetxattr -S fsetxattr -S removexattr -S lremovexattr -S fremovexattr -F auid>=500 -F auid!=4294967295 -k perm_mod' not in perm_mod.stdout")
   tags:
-    - "4.1.10"
     - level-2
     - section-4
+    - section-4.1
+    - "4.1.10"
     - scored
 
 

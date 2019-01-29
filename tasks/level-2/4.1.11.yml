@@ -9,9 +9,10 @@
   changed_when: False
   ignore_errors: true
   tags:
-    - "4.1.11"
     - level-2
     - section-4
+    - section-4.1
+    - "4.1.11"
     - scored
 
 
@@ -27,9 +28,10 @@
     - '-a always,exit -F arch=b32 -S creat -S open -S openat -S truncate -S ftruncate -F exit=-EPERM -F auid>=500 -F auid!=4294967295 -k access'
 
   tags:
-    - "4.1.11"
     - level-2
     - section-4
+    - section-4.1
+    - "4.1.11"
     - scored
 
 

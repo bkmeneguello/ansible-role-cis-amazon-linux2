@@ -11,5 +11,7 @@
     state: present
   tags:
     - level-1
+    - section-1
+    - section-1.5
     - "1.5.3"
     - scored

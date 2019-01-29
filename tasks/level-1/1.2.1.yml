@@ -9,5 +9,7 @@
   command: yum repolist
   tags:
     - level-1
+    - section-1
+    - section-1.2
     - "1.2.1"
     - scored

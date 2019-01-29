@@ -9,9 +9,10 @@
   changed_when: False
   ignore_errors: true
   tags:
-    - "4.1.7"
     - level-2
     - section-4
+    - section-4.1
+    - "4.1.7"
     - scored
 
 
@@ -25,7 +26,8 @@
   when:
     ("'-w /etc/selinux/ -p wa -k MAC-policy' not in MAC-policy.stdout")
   tags:
-    - "4.1.7"
     - level-2
     - section-4
+    - section-4.1
+    - "4.1.7"
     - scored

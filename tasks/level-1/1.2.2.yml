@@ -9,6 +9,8 @@
   shell: rpm -q gpg-pubkey --qf '%{name}-%{version}-%{release} --> %{summary}\n'
   tags:
     - level-1
+    - section-1
+    - section-1.2
     - "1.2.2"
     - scored
 

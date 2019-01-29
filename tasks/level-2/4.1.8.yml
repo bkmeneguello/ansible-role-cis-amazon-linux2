@@ -8,9 +8,10 @@
   changed_when: False
   ignore_errors: true
   tags:
-    - "4.1.8"
     - level-2
     - section-4
+    - section-4.1
+    - "4.1.8"
     - scored
 
 
@@ -27,8 +28,9 @@
    ("'-w /var/log/lastlog -p wa -k logins' not in logins.stdout")
 
   tags:
-    - "4.1.8"
     - level-2
     - section-4
+    - section-4.1
+    - "4.1.8"
     - scored
 

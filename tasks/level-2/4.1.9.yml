@@ -9,9 +9,10 @@
   changed_when: False
   ignore_errors: true
   tags:
-    - "4.1.9"
     - level-2
     - section-4
+    - section-4.1
+    - "4.1.9"
     - scored
 
 
@@ -29,8 +30,9 @@
     ("'-w /var/log/wtmp -p wa -k session' not in session.stdout") or
     ("'-w /var/log/btmp -p wa -k session' not in session.stdout")
   tags:
-    - "4.1.9"
     - level-2
     - section-4
+    - section-4.1
+    - "4.1.9"
     - scored
 

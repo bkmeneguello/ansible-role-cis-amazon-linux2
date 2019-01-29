@@ -9,9 +9,10 @@
   changed_when: False
   ignore_errors: true
   tags:
-    - "4.1.5"
     - level-2
     - section-4
+    - section-4.1
+    - "4.1.5"
     - scored
 
 
@@ -33,7 +34,8 @@
     ("'-w /etc/shadow -p wa -k identity' not in identity.stdout") or
     ("'-w /etc/security/opasswd -p wa -k identity' not in identity.stdout")
   tags:
-    - "4.1.5"
     - level-2
     - section-4
+    - section-4.1
+    - "4.1.5"
     - scored

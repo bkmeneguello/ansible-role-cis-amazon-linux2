@@ -10,6 +10,8 @@
   tags:
     - level-1
     - section-1
+    - section-1.1
+    - section-1.1.1
     - "1.1.1.4"
     - scored
 
@@ -21,6 +23,8 @@
   tags:
     - level-1
     - section-1
+    - section-1.1
+    - section-1.1.1
     - "1.1.1.4"
     - scored
 
@@ -33,5 +37,7 @@
   tags:
     - level-1
     - section-1
+    - section-1.1
+    - section-1.1.1
     - "1.1.1.4"
     - scored

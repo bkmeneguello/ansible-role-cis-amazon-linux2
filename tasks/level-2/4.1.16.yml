@@ -9,9 +9,10 @@
   changed_when: False
   ignore_errors: true
   tags:
-    - "4.1.16"
     - level-2
     - section-4
+    - section-4.1
+    - "4.1.16"
     - scored
 
 
@@ -25,9 +26,10 @@
   when:
     ("'-w /var/log/sudo.log -p wa -k actions' not in scope.stdout")
   tags:
-    - "4.1.16"
     - level-2
     - section-4
+    - section-4.1
+    - "4.1.16"
     - scored
 
 

@@ -9,9 +9,10 @@
   changed_when: False
   ignore_errors: true
   tags:
-    - "4.1.13"
     - level-1
     - section-4
+    - section-4.1
+    - "4.1.13"
     - scored
 
 
@@ -27,9 +28,10 @@
     ("'-a always,exit -F arch=b64 -S mount -F auid>=500 -F auid!=4294967295 -k mounts' not in mounts.stdout") or
     ("'-a always,exit -F arch=b32 -S mount -F auid>=500 -F auid!=4294967295 -k mounts' not in mounts.stdout")
   tags:
-    - "4.1.13"
     - level-1
     - section-4
+    - section-4.1
+    - "4.1.13"
     - scored
 
 

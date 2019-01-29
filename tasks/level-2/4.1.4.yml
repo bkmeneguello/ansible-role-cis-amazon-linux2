@@ -6,9 +6,10 @@
   changed_when: False
   ignore_errors: true
   tags:
-    - "4.1.4"
     - level-2
     - section-4
+    - section-4.1
+    - "4.1.4"
     - scored
 
 
@@ -30,7 +31,8 @@
     ("'-a always,exit -F arch=b32 -S clock_settime -k time-change' not in time-change.stdout") or
     ("'-w /etc/localtime -p wa -k time-change' not in time-change.stdout")
   tags:
-    - "4.1.4"
     - level-2
     - section-4
+    - section-4.1
+    - "4.1.4"
     - scored

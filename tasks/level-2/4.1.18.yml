@@ -9,9 +9,10 @@
   changed_when: False
   ignore_errors: true
   tags:
-    - "4.1.18"
     - level-2
     - section-4
+    - section-4.1
+    - "4.1.18"
     - scored
 
 
@@ -25,9 +26,10 @@
   when:
     ("'-e 2' not in immutable.stdout")
   tags:
-    - "4.1.18"
     - level-2
     - section-4
+    - section-4.1
+    - "4.1.18"
     - scored
 
 

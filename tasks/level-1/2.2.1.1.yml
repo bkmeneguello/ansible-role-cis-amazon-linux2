@@ -13,7 +13,9 @@
     - { name: "chrony", state: "absent" }
   tags:
     - level-1
-    - section-4
+    - section-2
+    - section-2.2
+    - section-2.2.1
     - "2.2.1.1"
     - not-scored
 
@@ -27,6 +29,8 @@
     - { name: "chrony", state: "present" }
   tags:
     - level-1
-    - section-4
+    - section-2
+    - section-2.2
+    - section-2.2.1
     - "2.2.1.1"
     - not-scored

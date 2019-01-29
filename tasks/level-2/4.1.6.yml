@@ -9,9 +9,10 @@
   changed_when: False
   ignore_errors: true
   tags:
-    - "4.1.6"
     - level-2
     - section-4
+    - section-4.1
+    - "4.1.6"
     - scored
 
 
@@ -33,7 +34,8 @@
     ("'-w /etc/issue.net -p wa -k system-locale' not in system-locale.stdout") or
     ("'-w /etc/sysconfig/network -p wa -k system-locale' not in system-locale.stdout")
   tags:
-    - "4.1.6"
     - level-2
     - section-4
+    - section-4.1
+    - "4.1.6"
     - scored

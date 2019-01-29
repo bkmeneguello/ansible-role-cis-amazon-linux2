@@ -9,6 +9,8 @@
   register: which_1_5_4
   tags:
     - level-1
+    - section-1
+    - section-1.5
     - "1.5.4"
     - scored
 
@@ -17,6 +19,8 @@
   when: which_1_5_4.rc is defined and which_1_5_4.rc == 0
   tags:
     - level-1
+    - section-1
+    - section-1.5
     - "1.5.4"
     - scored
 
@@ -26,5 +30,7 @@
     state: absent
   tags:
     - level-1
+    - section-1
+    - section-1.5
     - "1.5.4"
     - scored
