@@ -15,6 +15,7 @@
     - section-4.2.2
     - "4.2.2.1"
     - scored
+    - lint  # ANSIBLE0006
 
 - name: 4.2.2.1 - Ensure syslog-ng service is enabled
   service:

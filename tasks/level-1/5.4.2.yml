@@ -6,8 +6,8 @@
 - name: 5.4.2 - Retrieve system accounts
   shell: "awk -F: '($3 < 500) {print $1 }' /etc/passwd | grep -v ^#"
   register: audit_5_4_2
-  check_mode: no
-  changed_when: False
+  check_mode: false
+  changed_when: false
   tags:
     - level-1
     - section-5
@@ -25,6 +25,7 @@
     - section-5.4
     - "5.4.2"
     - scored
+    - non-idempotent
 
 - name: 5.4.2 - Ensure system accounts are non-login
   user:

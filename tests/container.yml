@@ -29,7 +29,7 @@
         state: present
         path: .
         dockerfile: "{{ playbook_dir }}/tmp/Dockerfile"
-        force: yes
+        force: true
 
     - name: Test playbook within docker container
       docker_container:
@@ -37,7 +37,7 @@
         detach: false
         image: "{{ docker_image_name }}"
         name: "{{ docker_container_name }}"
-        privileged: yes
+        privileged: true
         state: started
 
     always:

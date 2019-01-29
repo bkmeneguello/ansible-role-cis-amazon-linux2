@@ -33,3 +33,4 @@
     - section-5.1
     - "5.1.8"
     - scored
+    - non-idempotent

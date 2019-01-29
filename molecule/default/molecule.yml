@@ -1,0 +1,28 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint:
+  name: yamllint
+platforms:
+  - name: instance
+    image: amazonlinux:1
+provisioner:
+  name: ansible
+  log: true
+  config_options:
+    defaults:
+      stdout_callback: actionable
+    connection:
+      pipelining: true
+  lint:
+    name: ansible-lint
+    options:
+      x:
+        - ANSIBLE0006  # Using command rather than module
+        - ANSIBLE0010  # Package installs should not use latest
+        - ANSIBLE0012  # Commands should not change things if nothing needs doing
+        - ANSIBLE0013  # Use shell only when shell functionality is required
+scenario:
+  name: default

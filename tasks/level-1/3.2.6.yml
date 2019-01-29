@@ -5,22 +5,16 @@
 
 - name: 3.2.6 - Ensure bogus ICMP responses are ignored
   sysctl:
-    ignoreerrors: yes
-    name: "net.ipv4.icmp_ignore_bogus_error_responses"
-    value: 1
+    ignoreerrors: true
+    name: "{{ item.key }}"
+    value: "{{ item.value }}"
     state: present
-  tags:
-    - level-1
-    - section-3
-    - section-3.2
-    - "3.2.6"
-    - scored
-
-- name: 3.2.6 - Ensure bogus ICMP responses are ignored by active kernel parameters
-  command: "{{ item }}"
-  with_items:
-    - "sysctl -w net.ipv4.icmp_ignore_bogus_error_responses=1"
-    - "sysctl -w net.ipv4.route.flush=1"
+  with_dict:
+    "net.ipv4.icmp_ignore_bogus_error_responses": 1
+    "net.ipv4.route.flush": 1
+  when: >
+    ansible_virtualization_role is undefined or
+    not (ansible_virtualization_role == 'guest' and ansible_virtualization_type in ['lxc', 'docker'])
   tags:
     - level-1
     - section-3

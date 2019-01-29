@@ -4,9 +4,9 @@
 # 4.1.13 Ensure successful file system mounts are collected (Scored)
 
 - name: 4.1.13 Ensure successful file system mounts are collected (Scored)
-  shell: "grep mounts {{ cis_audit_rules_filename }}"
+  command: "grep mounts {{ cis_audit_rules_filename }}"
   register: mounts
-  changed_when: False
+  changed_when: false
   ignore_errors: true
   tags:
     - level-1
@@ -14,7 +14,6 @@
     - section-4.1
     - "4.1.13"
     - scored
-
 
 - name: 4.1.13 Ensure successful file system mounts are collected (Scored)(Verify registered output matches)
   lineinfile:
@@ -24,7 +23,7 @@
     - '# 4.1.13 Ensure successful file system mounts are collected (Scored)'
     - '-a always,exit -F arch=b64 -S mount -F auid>=500 -F auid!=4294967295 -k mounts'
     - '-a always,exit -F arch=b32 -S mount -F auid>=500 -F auid!=4294967295 -k mounts'
-  when:
+  when: >
     ("'-a always,exit -F arch=b64 -S mount -F auid>=500 -F auid!=4294967295 -k mounts' not in mounts.stdout") or
     ("'-a always,exit -F arch=b32 -S mount -F auid>=500 -F auid!=4294967295 -k mounts' not in mounts.stdout")
   tags:
@@ -33,10 +32,3 @@
     - section-4.1
     - "4.1.13"
     - scored
-
-
-
-
-
-
-

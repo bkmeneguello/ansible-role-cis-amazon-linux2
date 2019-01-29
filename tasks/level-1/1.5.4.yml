@@ -13,6 +13,7 @@
     - section-1.5
     - "1.5.4"
     - scored
+    - lint  # ANSIBLE0012
 
 - name: Restore prelinked binaries
   command: prelink -ua

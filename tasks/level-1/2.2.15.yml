@@ -13,6 +13,7 @@
     - section-2.2
     - "2.2.15"
     - scored
+    - lint  # ANSIBLE0012
 
 - name: 2.2.15 - Ensure mail transfer agent is configured for local-only mode
   fail:
@@ -39,4 +40,3 @@
     - section-2.2
     - "2.2.15"
     - scored
-

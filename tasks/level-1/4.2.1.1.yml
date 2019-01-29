@@ -15,6 +15,8 @@
     - section-4.2.1
     - "4.2.1.1"
     - scored
+    - non-idempotent
+    - lint  # ANSIBLE0006
 
 - name: 4.2.1.1 - Ensure rsyslog Service is enabled
   service:

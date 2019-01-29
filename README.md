@@ -77,7 +77,7 @@ An example playbook which uses this role is as follows:
 - hosts: localhost
   connection: local
   gather_facts: true
-  become: yes
+  become: true
 
   roles:
     - anthcourtney.cis-amazon-linux
@@ -91,7 +91,7 @@ A more advanced example, which includes modifications to the default values used
 - hosts: localhost
   connection: local
   gather_facts: true
-  become: yes
+  become: true
 
   vars:
     cis_level_1_exclusions:
@@ -107,7 +107,7 @@ A more advanced example, which includes modifications to the default values used
 
 ```
 
-Note that the use of ```become: yes``` is required as 99% of tasks require privileged access to execute.
+Note that the use of ```become: true``` is required as 99% of tasks require privileged access to execute.
 
 Role Variables
 --------------

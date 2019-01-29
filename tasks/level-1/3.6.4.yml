@@ -10,7 +10,10 @@
     match: state
     ctstate: ESTABLISHED,NEW
     jump: ACCEPT
-  become: yes
+  become: true
+  when: >
+    ansible_virtualization_role is undefined or
+    not (ansible_virtualization_role == 'guest' and ansible_virtualization_type in ['lxc', 'docker'])
   tags:
     - level-1
     - section-3
@@ -25,7 +28,10 @@
     match: state
     ctstate: ESTABLISHED,NEW
     jump: ACCEPT
-  become: yes
+  become: true
+  when: >
+    ansible_virtualization_role is undefined or
+    not (ansible_virtualization_role == 'guest' and ansible_virtualization_type in ['lxc', 'docker'])
   tags:
     - level-1
     - section-3
@@ -40,7 +46,10 @@
     match: state
     ctstate: ESTABLISHED,NEW
     jump: ACCEPT
-  become: yes
+  become: true
+  when: >
+    ansible_virtualization_role is undefined or
+    not (ansible_virtualization_role == 'guest' and ansible_virtualization_type in ['lxc', 'docker'])
   tags:
     - level-1
     - section-3
@@ -55,7 +64,10 @@
     match: state
     ctstate: ESTABLISHED
     jump: ACCEPT
-  become: yes
+  become: true
+  when: >
+    ansible_virtualization_role is undefined or
+    not (ansible_virtualization_role == 'guest' and ansible_virtualization_type in ['lxc', 'docker'])
   tags:
     - level-1
     - section-3
@@ -70,7 +82,10 @@
     match: state
     ctstate: ESTABLISHED
     jump: ACCEPT
-  become: yes
+  become: true
+  when: >
+    ansible_virtualization_role is undefined or
+    not (ansible_virtualization_role == 'guest' and ansible_virtualization_type in ['lxc', 'docker'])
   tags:
     - level-1
     - section-3
@@ -85,7 +100,10 @@
     match: state
     ctstate: ESTABLISHED
     jump: ACCEPT
-  become: yes
+  become: true
+  when: >
+    ansible_virtualization_role is undefined or
+    not (ansible_virtualization_role == 'guest' and ansible_virtualization_type in ['lxc', 'docker'])
   tags:
     - level-1
     - section-3

@@ -13,4 +13,5 @@
     - section-1.2
     - "1.2.2"
     - scored
-
+    - non-idempotent
+    - lint  # ANSIBLE0006, ANSIBLE0012

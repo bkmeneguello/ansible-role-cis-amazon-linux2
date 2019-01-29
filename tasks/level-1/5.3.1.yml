@@ -9,7 +9,7 @@
     regexp: "{{ item.regexp }}"
     line: "{{ item.line }}"
     state: present
-    create: yes
+    create: true
   with_items:
     - { regexp: "^#?minlen=", line: "minlen={{ cis_pwquality_minlen }}" }
     - { regexp: "^#?dcredit=", line: "dcredit={{ cis_pwquality_dcredit }}" }

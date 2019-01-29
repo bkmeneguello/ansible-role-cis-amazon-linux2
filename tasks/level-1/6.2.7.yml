@@ -5,8 +5,8 @@
 
 - name: 6.2.7 - Audit existence of users' home directories
   script: "{{ role_path }}/files/audit_6.2.7.sh"
-  check_mode: no
-  changed_when: False
+  check_mode: false
+  changed_when: false
   register: audit_6_2_7
   tags:
     - level-1

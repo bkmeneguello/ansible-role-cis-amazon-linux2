@@ -5,12 +5,12 @@
 
 - name: 1.6.1.6 Ensure no unconfined daemons exist (Scored)
   script: "{{ role_path }}/files/audit_1.6.1.6.sh"
-  check_mode: no
-  changed_when: False
+  check_mode: false
+  changed_when: false
   register: audit_1_6_1_6
   tags:
     - level-1
-    - section-6
+    - section-1
     - section-1.6
     - section-1.6.1
     - "1.6.1.6"
@@ -24,7 +24,7 @@
     - fail_on_manual_remediation_actions
   tags:
     - level-1
-    - section-6
+    - section-1
     - section-1.6
     - section-1.6.1
     - "1.6.1.6"
@@ -38,7 +38,7 @@
     - not fail_on_manual_remediation_actions
   tags:
     - level-1
-    - section-6
+    - section-1
     - section-1.6
     - section-1.6.1
     - "1.6.1.6"

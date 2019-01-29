@@ -42,8 +42,8 @@ cis_aide_cron_user: "root"
 cis_aide_cron_job: "/usr/sbin/aide --check"
 cis_aide_cron_minute: 0
 cis_aide_cron_hour: 5
-cis_aide_cron_dow: "*" # Day of week
-cis_aide_cron_dom: "*" # Day of month
+cis_aide_cron_dow: "*"  # Day of week
+cis_aide_cron_dom: "*"  # Day of month
 cis_aide_cron_month: "*"
 
 # 1.7.1.2
@@ -53,24 +53,24 @@ cis_remote_login_warning_banner: "Authorized uses only. All activity may be moni
 
 # 2.2.1.1
 # You should only enable either ntp or chrony, but not both.
-cis_enable_ntp: true # Set to true if ntp should be enabled/configured.
-cis_enable_chrony: false # Set to true if chrony should be enabled/configured.
-cis_ntp_servers: [] # NTP server list to replace package defaults
-cis_ntp_pools: [] # NTP pool list to replace package defaults
+cis_enable_ntp: true  # Set to true if ntp should be enabled/configured.
+cis_enable_chrony: false  # Set to true if chrony should be enabled/configured.
+cis_ntp_servers: []  # NTP server list to replace package defaults
+cis_ntp_pools: []  # NTP pool list to replace package defaults
 
 # 3.4.2
 cis_hosts_allow_all_ips: "127.0.0.1"
 
 # 4.2.3
 # You should only enable either rsyslog or syslog-ng, but not both.
-cis_enable_rsyslog: true # Set to true if rsyslog should be enabled/configured.
-cis_enable_syslog_ng: false # Set to true if syslog_ng should be enabled/configured.
+cis_enable_rsyslog: true  # Set to true if rsyslog should be enabled/configured.
+cis_enable_syslog_ng: false  # Set to true if syslog_ng should be enabled/configured.
 
 # 4.2.1.4
-cis_rsyslog_remote_loghost_address: "loghost.example.com" # Can be a hostname or IP address. If no forwarding should occur, exclude this check.
+cis_rsyslog_remote_loghost_address: "loghost.example.com"  # Can be a hostname or IP address. If no forwarding should occur, exclude this check.
 
 # 4.2.1.5
-cis_rsyslog_accept_remote_messages: false # Set to true if the host should accept remote syslog messages.
+cis_rsyslog_accept_remote_messages: false  # Set to true if the host should accept remote syslog messages.
 
 # 4.2.2.3
 cis_syslog_ng_file_perms: "0640"
@@ -92,20 +92,20 @@ cis_sshd_client_alive_count_max: 0
 cis_sshd_login_grace_time: 60
 
 # 5.2.15
-cis_sshd_allow_users: "" # A comma-delimited list of users to allow ssh access to
-cis_sshd_allow_groups: "" # A comma-delimited list of groups ot allow ssh access to
-cis_sshd_deny_users: "" # A comma-delimited list of users to deny ssh access for
-cis_sshd_deny_groups: "" # A comma-delimited list of groups to deny ssh access for
+cis_sshd_allow_users: ""  # A comma-delimited list of users to allow ssh access to
+cis_sshd_allow_groups: ""  # A comma-delimited list of groups ot allow ssh access to
+cis_sshd_deny_users: ""  # A comma-delimited list of users to deny ssh access for
+cis_sshd_deny_groups: ""  # A comma-delimited list of groups to deny ssh access for
 
 # 5.2.16
 cis_sshd_banner: "/etc/issue.net"
 
 # 5.3.1
-cis_pwquality_minlen: "14" # Minimum number of characters required for passwords
-cis_pwquality_dcredit: "-1" # At least one digit must be provided
-cis_pwquality_ucredit: "-1" # At least one uppercase character must be provided
-cis_pwquality_ocredit: "-1" # At least one special character must be provided
-cis_pwquality_lcredit: "-1" # At least one lowercase character must be provided
+cis_pwquality_minlen: "14"  # Minimum number of characters required for passwords
+cis_pwquality_dcredit: "-1"  # At least one digit must be provided
+cis_pwquality_ucredit: "-1"  # At least one uppercase character must be provided
+cis_pwquality_ocredit: "-1"  # At least one special character must be provided
+cis_pwquality_lcredit: "-1"  # At least one lowercase character must be provided
 
 # 5.4.1
 cis_pass_max_days: 90
@@ -123,8 +123,8 @@ cis_skip_lock_users:
 # 5.4.4
 cis_umask_default: "027"
 cis_umask_shell_files:
-- /etc/bashrc
-- /etc/profile
+  - /etc/bashrc
+  - /etc/profile
 
 # 5.5
 cis_wheel_group_members: "root"

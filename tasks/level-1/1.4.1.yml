@@ -19,7 +19,7 @@
     path: "{{ cis_grub_bootloader_filename }}"
     owner: root
     group: root
-    mode:  "og-rwx"
+    mode: "og-rwx"
     state: file
   when: grub_1_4_1.stat.exists
   tags:

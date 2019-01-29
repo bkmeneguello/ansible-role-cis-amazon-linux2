@@ -4,9 +4,9 @@
 # 4.1.5 Ensure events that modify user/group information are collected(Scored)
 
 - name: 4.1.5 Ensure events that modify user/group information are collected(Scored)
-  shell: "grep identity {{ cis_audit_rules_filename }}"
+  command: "grep identity {{ cis_audit_rules_filename }}"
   register: identity
-  changed_when: False
+  changed_when: false
   ignore_errors: true
   tags:
     - level-2
@@ -14,7 +14,6 @@
     - section-4.1
     - "4.1.5"
     - scored
-
 
 - name: 4.1.5 Ensure events that modify user/group information are collected(Scored)(Verify registered output matches)
   lineinfile:
@@ -27,7 +26,7 @@
     - '-w /etc/gshadow -p wa -k identity'
     - '-w /etc/shadow -p wa -k identity'
     - '-w /etc/security/opasswd -p wa -k identity'
-  when:
+  when: >
     ("'-w /etc/group -p wa -k identity' not in identity.stdout") or
     ("'-w /etc/passwd -p wa -k identity' not in identity.stdout") or
     ("'-w /etc/gshadow -p wa -k identity' not in identity.stdout") or

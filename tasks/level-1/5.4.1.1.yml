@@ -6,8 +6,8 @@
 - name: 5.4.1.1 - Obtain a list of user accounts
   shell: "egrep ^[^:]+:[^\\!*] /etc/shadow | cut -d: -f1"
   register: egrep_5_4_1_1
-  check_mode: no
-  changed_when: False
+  check_mode: false
+  changed_when: false
   tags:
     - level-1
     - section-5
@@ -39,3 +39,4 @@
     - section-5.4.1
     - "5.4.1.1"
     - scored
+    - lint  # ANSIBLE0012

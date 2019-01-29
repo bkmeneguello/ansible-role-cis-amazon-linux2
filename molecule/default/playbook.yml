@@ -1,0 +1,5 @@
+---
+- name: Converge
+  hosts: all
+  roles:
+    - role: anthcourtney.cis-amazon-linux

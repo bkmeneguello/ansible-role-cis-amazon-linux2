@@ -9,7 +9,7 @@
     owner: root
     group: root
     mode: 0644
-    follow: yes
+    follow: true
   tags:
     - level-1
     - section-1

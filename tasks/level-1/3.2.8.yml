@@ -5,22 +5,16 @@
 
 - name: 3.2.8 - Ensure TCP SYN Cookies is enabled
   sysctl:
-    ignoreerrors: yes
-    name: "net.ipv4.tcp_syncookies"
-    value: 1
+    ignoreerrors: true
+    name: "{{ item.key }}"
+    value: "{{ item.value }}"
     state: present
-  tags:
-    - level-1
-    - section-3
-    - section-3.2
-    - "3.2.8"
-    - scored
-
-- name: 3.2.8 - Ensure TCP SYN Cookies is enabled by active kernel parameters
-  command: "{{ item }}"
-  with_items:
-    - "sysctl -w net.ipv4.tcp_syncookies=1"
-    - "sysctl -w net.ipv4.route.flush=1"
+  with_dict:
+    "net.ipv4.tcp_syncookies": 1
+    "net.ipv4.route.flush": 1
+  when: >
+    ansible_virtualization_role is undefined or
+    not (ansible_virtualization_role == 'guest' and ansible_virtualization_type in ['lxc', 'docker'])
   tags:
     - level-1
     - section-3

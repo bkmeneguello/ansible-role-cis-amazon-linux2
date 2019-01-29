@@ -12,12 +12,13 @@
     - section-6.1
     - "6.1.1"
     - scored
+    - lint  # ANSIBLE0006, ANSIBLE0012
 
 - name: 6.1.1 - Audit system file permissions
   fail:
     msg: "{{ audit_6_1_1.stdout }}"
   when:
-    - audit_6_1_1.stdout_lines is defined and audit_6_1_1.stdout_lines|length > 0
+    - audit_6_1_1.stdout_lines is defined and audit_6_1_1.stdout_lines | length > 0
     - fail_on_manual_remediation_actions
   tags:
     - level-2
@@ -38,4 +39,3 @@
     - section-6.1
     - "6.1.1"
     - scored
-

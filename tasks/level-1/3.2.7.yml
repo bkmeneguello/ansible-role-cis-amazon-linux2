@@ -5,26 +5,17 @@
 
 - name: 3.2.7 - Ensure Reverse Path Filtering is enabled
   sysctl:
-    ignoreerrors: yes
-    name: "{{ item }}"
-    value: 1
+    ignoreerrors: true
+    name: "{{ item.key }}"
+    value: "{{ item.value }}"
     state: present
-  with_items:
-    - "net.ipv4.conf.all.rp_filter"
-    - "net.ipv4.conf.default.rp_filter"
-  tags:
-    - level-1
-    - section-3
-    - section-3.2
-    - "3.2.7"
-    - scored
-
-- name: 3.2.7 - Ensure Reverse Path Filtering is enabled by active kernel parameters
-  command: "{{ item }}"
-  with_items:
-    - "sysctl -w net.ipv4.conf.all.rp_filter=1"
-    - "sysctl -w net.ipv4.conf.default.rp_filter=1"
-    - "sysctl -w net.ipv4.route.flush=1"
+  with_dict:
+    "net.ipv4.conf.all.rp_filter": 1
+    "net.ipv4.conf.default.rp_filter": 1
+    "net.ipv4.route.flush": 1
+  when: >
+    ansible_virtualization_role is undefined or
+    not (ansible_virtualization_role == 'guest' and ansible_virtualization_type in ['lxc', 'docker'])
   tags:
     - level-1
     - section-3

@@ -3,7 +3,7 @@
 
 - hosts: localhost
   connection: local
-  become: yes
+  become: true
 
   roles:
     - ansible-role-cis-amazon-linux
