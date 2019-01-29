@@ -55,6 +55,8 @@ cis_remote_login_warning_banner: "Authorized uses only. All activity may be moni
 # You should only enable either ntp or chrony, but not both.
 cis_enable_ntp: true # Set to true if ntp should be enabled/configured.
 cis_enable_chrony: false # Set to true if chrony should be enabled/configured.
+cis_ntp_servers: [] # NTP server list to replace package defaults
+cis_ntp_pools: [] # NTP pool list to replace package defaults
 
 # 3.4.2
 cis_hosts_allow_all_ips: "127.0.0.1"
