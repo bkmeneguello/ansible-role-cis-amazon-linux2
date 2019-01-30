@@ -8,7 +8,7 @@
     name: libselinux-python
     state: installed
   tags:
-    - level-1
+    - level-2
     - section-1
     - section-1.6
     - section-1.6.1
@@ -20,7 +20,7 @@
     name: policycoreutils-python
     state: installed
   tags:
-    - level-1
+    - level-2
     - section-1
     - section-1.6
     - section-1.6.1
@@ -32,7 +32,7 @@
     policy: targeted
     state: enforcing
   tags:
-    - level-1
+    - level-2
     - section-1
     - section-1.6
     - section-1.6.1

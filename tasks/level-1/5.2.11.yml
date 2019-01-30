@@ -1,7 +1,7 @@
 # Standards: 0.11
 ---
 
-# 5.2.11 - Ensure only approved ciphers are used
+# 5.2.11 - Ensure only approved MAC algorithms are used
 
 - include: stat_sshd_config.yml
   tags:
@@ -11,10 +11,10 @@
     - "5.2.11"
     - scored
 
-- name: 5.2.11 - Ensure only approved ciphers are used
+- name: 5.2.11 - Ensure only approved MAC algorithms are used
   lineinfile:
-    regexp: "^Ciphers\\s+"
-    line: "Ciphers {{ cis_sshd_ciphers }}"
+    regexp: "^MACs\\s+"
+    line: "MACs {{ cis_sshd_macs }}"
     dest: "/etc/ssh/sshd_config"
   when: sshd_config.stat.exists
   notify:

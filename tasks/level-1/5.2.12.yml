@@ -1,7 +1,7 @@
 # Standards: 0.11
 ---
 
-# 5.2.12 - Ensure only approved MAC algorithms are used
+# 5.2.12 - Ensure SSH Idle Timeout Interval is configured
 
 - include: stat_sshd_config.yml
   tags:
@@ -11,10 +11,25 @@
     - "5.2.12"
     - scored
 
-- name: 5.2.12 - Ensure only approved MAC algorithms are used
+- name: 5.2.12 - Ensure SSH Client Alive Interval is configured
   lineinfile:
-    regexp: "^MACs\\s+"
-    line: "MACs {{ cis_sshd_macs }}"
+    regexp: "^ClientAliveInterval\\s+"
+    line: "ClientAliveInterval {{ cis_sshd_client_alive_interval }}"
+    dest: "/etc/ssh/sshd_config"
+  when: sshd_config.stat.exists
+  notify:
+    - Restart sshd
+  tags:
+    - level-1
+    - section-5
+    - section-5.2
+    - "5.2.12"
+    - scored
+
+- name: 5.2.12 - Ensure SSH Client Alive Count Max is configured
+  lineinfile:
+    regexp: "^ClientAliveCountMax\\s+"
+    line: "ClientAliveCountMax {{ cis_sshd_client_alive_count_max }}"
     dest: "/etc/ssh/sshd_config"
   when: sshd_config.stat.exists
   notify:
