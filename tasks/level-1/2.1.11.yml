@@ -1,15 +1,18 @@
-# Standards: 2.0.0
+# Standards: 1.0.0
 ---
 
-# 2.1.11 Ensure xinetd server is not enabled
+# 2.1.11 Ensure IMAP and POP3 server is not enabled
 
-- name: 2.1.11 - Ensure xinetd server is not enabled
-  service:
-    name: "xinetd"
+- name: 2.1.11 - Ensure IMAP and POP3 server is not enabled
+  systemd:
+    name: "{{ item }}"
     enabled: false
     state: stopped
-  register: service
-  failed_when: service is failed and not 'Could not find the requested service' in service.msg
+  with_items:
+    - dovecot
+    - cyrus-imapd
+  register: systemd
+  failed_when: systemd is failed and not 'Could not find the requested service' in systemd.msg
   when: not in_container
   tags:
     - level-1

@@ -1,4 +1,4 @@
-# Standards: 2.0.0
+# Standards: 1.0.0
 ---
 
 # 4.2.2.5  Ensure remote syslog-ng messages are only accepted on designated log hosts

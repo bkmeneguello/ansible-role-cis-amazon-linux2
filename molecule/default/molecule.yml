@@ -7,7 +7,7 @@ lint:
   name: yamllint
 platforms:
   - name: instance
-    image: amazonlinux:1
+    image: amazonlinux:2
 provisioner:
   name: ansible
   log: true

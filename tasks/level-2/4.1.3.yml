@@ -1,4 +1,4 @@
-# Standards: 2.0.0
+# Standards: 1.0.0
 ---
 
 # 4.1.3 Ensure auditing for processes that start prior to auditd is enabled (Scored)

@@ -1,13 +1,11 @@
-# Standards: 2.0.0
+# Standards: 1.0.0
 ---
 
 - include: preflight.yml
   when: cis_apply_level_1_profile or cis_apply_level_2_profile
 
 - include: "level-1.yml"
-  become: true
   when: cis_apply_level_1_profile
 
 - include: "level-2.yml"
-  become: true
   when: cis_apply_level_2_profile

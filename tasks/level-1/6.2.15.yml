@@ -1,4 +1,4 @@
-# Standards: 2.0.0
+# Standards: 1.0.0
 ---
 
 # 6.2.15 Ensure all groups in /etc/passwd exist in /etc/group

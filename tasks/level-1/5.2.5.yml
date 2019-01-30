@@ -1,7 +1,7 @@
-# Standards: 2.0.0
+# Standards: 1.0.0
 ---
 
-# 5.2.5 Ensure SSH MaxAuthTries is set to 4 or less
+# 5.2.5 Ensure SSH LogLevel is appropriate
 
 - include: stat_sshd_config.yml
   tags:
@@ -12,10 +12,10 @@
     - "5.2.5"
     - scored
 
-- name: 5.2.5 - Ensure SSH MaxAuthTries is set to 4 or less
+- name: 5.2.5 - Ensure SSH LogLevel is appropriate
   lineinfile:
-    regexp: "^MaxAuthTries\\s+"
-    line: "MaxAuthTries {{ cis_sshd_max_auth_tries }}"
+    regexp: "^LogLevel\\s+"
+    line: "LogLevel INFO"
     dest: "/etc/ssh/sshd_config"
   when: sshd_config.stat.exists
   notify:

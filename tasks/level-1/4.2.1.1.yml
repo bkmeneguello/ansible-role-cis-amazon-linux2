@@ -1,13 +1,12 @@
-# Standards: 2.0.0
+# Standards: 1.0.0
 ---
 
 # 4.2.1.1 Ensure rsyslog Service is enabled
 
-- name: 4.2.1.1 - Check if rsyslog is installed
-  command: yum -q list rsyslog
-  ignore_errors: true
-  when: cis_enable_rsyslog
-  register: rsyslog
+- name: 4.2.1.1 - Ensure rsyslog is installed
+  yum:
+    name: rsyslog
+  when: cis_enable_rsyslog and not cis_enable_syslog_ng
   tags:
     - level-1
     - section-4
@@ -16,18 +15,16 @@
     - section-4.2.1.1
     - "4.2.1.1"
     - scored
-    - non-idempotent
-    - lint  # ANSIBLE0006
 
-- name: 4.2.1.1 - Ensure rsyslog Service is enabled
-  service:
-    name: "rsyslog"
+- name: 4.2.1.1 - Ensure rsyslog service is enabled
+  systemd:
+    name: rsyslog
     enabled: true
     state: started
   when:
     - not in_container
     - cis_enable_rsyslog
-    - rsyslog.rc is not defined or rsyslog.rc == 0
+    - not cis_enable_syslog_ng
   tags:
     - level-1
     - section-4

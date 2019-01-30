@@ -1,7 +1,7 @@
-# Standards: 2.0.0
+# Standards: 1.0.0
 ---
 
-# 5.2.8 Ensure SSH root login is disabled
+# 5.2.8 Ensure SSH IgnoreRhosts is enabled
 
 - include: stat_sshd_config.yml
   tags:
@@ -12,10 +12,10 @@
     - "5.2.8"
     - scored
 
-- name: 5.2.8 - Ensure SSH root login is disabled
+- name: 5.2.8 - Ensure SSH IgnoreRhosts is enabled
   lineinfile:
-    regexp: "^PermitRootLogin\\s+"
-    line: "PermitRootLogin no"
+    regexp: "^IgnoreRhosts\\s+"
+    line: "IgnoreRhosts yes"
     dest: "/etc/ssh/sshd_config"
   when: sshd_config.stat.exists
   notify:

@@ -1,7 +1,7 @@
-# Standards: 2.0.0
+# Standards: 1.0.0
 ---
 
-# 5.2.7 Ensure SSH HostbasedAuthentication is disabled
+# 5.2.7 Ensure SSH MaxAuthTries is set to 4 or less
 
 - include: stat_sshd_config.yml
   tags:
@@ -12,10 +12,10 @@
     - "5.2.7"
     - scored
 
-- name: 5.2.7 - Ensure SSH HostbasedAuthentication is disabled
+- name: 5.2.7 - Ensure SSH MaxAuthTries is set to 4 or less
   lineinfile:
-    regexp: "^HostbasedAuthentication\\s+"
-    line: "HostbasedAuthentication no"
+    regexp: "^MaxAuthTries\\s+"
+    line: "MaxAuthTries {{ cis_sshd_max_auth_tries }}"
     dest: "/etc/ssh/sshd_config"
   when: sshd_config.stat.exists
   notify:

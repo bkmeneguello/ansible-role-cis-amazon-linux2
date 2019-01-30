@@ -1,20 +1,20 @@
-# Standards: 2.0.0
+# Standards: 1.0.0
 ---
 
 - name: Restart sshd
-  service:
+  systemd:
     name: sshd
     state: restarted
   when: not in_container
 
 - name: Restart rsyslog
-  service:
+  systemd:
     name: rsyslog
     state: restarted
   when: not in_container
 
 - name: Restart auditd
-  service:
+  systemd:
     name: auditd
     state: restarted
   when: not in_container

@@ -1,7 +1,7 @@
-# Standards: 2.0.0
+# Standards: 1.0.0
 ---
 
-# 5.2.13 Ensure SSH LoginGraceTime is set to one minute or less
+# 5.2.13 Ensure only strong ciphers are used (Scored)
 
 - include: stat_sshd_config.yml
   tags:
@@ -12,10 +12,10 @@
     - "5.2.13"
     - scored
 
-- name: 5.2.13 - Ensure SSH LoginGraceTime is set to one minute or less
+- name: 5.2.13 - Ensure only approved ciphers are used
   lineinfile:
-    regexp: "^LoginGraceTime\\s+"
-    line: "LoginGraceTime {{ cis_sshd_login_grace_time }}"
+    regexp: "^Ciphers\\s+"
+    line: "Ciphers {{ cis_sshd_ciphers }}"
     dest: "/etc/ssh/sshd_config"
   when: sshd_config.stat.exists
   notify:

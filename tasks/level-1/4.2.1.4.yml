@@ -1,4 +1,4 @@
-# Standards: 2.0.0
+# Standards: 1.0.0
 ---
 
 # 4.2.1.4 Ensure rsyslog is configured to send logs to a remote log host

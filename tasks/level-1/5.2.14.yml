@@ -1,7 +1,7 @@
-# Standards: 2.0.0
+# Standards: 1.0.0
 ---
 
-# 5.2.14 Ensure SSH access is limited
+# 5.2.14 Ensure only strong MAC algorithms are used (Scored)
 
 - include: stat_sshd_config.yml
   tags:
@@ -12,66 +12,14 @@
     - "5.2.14"
     - scored
 
-- name: 5.2.14 - Configure SSH AllowUsers
+- name: 5.2.14 - Ensure only strong MAC algorithms are used
   lineinfile:
-    regexp: "^#?AllowUsers\\s+"
-    line: "AllowUsers {{ cis_sshd_allow_users }}"
+    regexp: "^MACs\\s+"
+    line: "MACs {{ cis_sshd_macs }}"
     dest: "/etc/ssh/sshd_config"
-  when:
-    - sshd_config.stat.exists
-    - cis_sshd_allow_users is defined and cis_sshd_allow_users|trim != ""
-  notify: Restart sshd
-  tags:
-    - level-1
-    - section-5
-    - section-5.2
-    - section-5.2.14
-    - "5.2.14"
-    - scored
-
-- name: 5.2.14 - Configure SSH AllowGroups
-  lineinfile:
-    regexp: "^#?AllowGroups\\s+"
-    line: "AllowGroups {{ cis_sshd_allow_groups }}"
-    dest: "/etc/ssh/sshd_config"
-  when:
-    - sshd_config.stat.exists
-    - cis_sshd_allow_groups is defined and cis_sshd_allow_groups|trim != ""
-  notify: Restart sshd
-  tags:
-    - level-1
-    - section-5
-    - section-5.2
-    - section-5.2.14
-    - "5.2.14"
-    - scored
-
-- name: 5.2.14 - Configure SSH DenyUsers
-  lineinfile:
-    regexp: "^#?DenyUsers\\s+"
-    line: "DenyUsers {{ cis_sshd_deny_users }}"
-    dest: "/etc/ssh/sshd_config"
-  when:
-    - sshd_config.stat.exists
-    - cis_sshd_deny_users is defined and cis_sshd_deny_users|trim != ""
-  notify: Restart sshd
-  tags:
-    - level-1
-    - section-5
-    - section-5.2
-    - section-5.2.14
-    - "5.2.14"
-    - scored
-
-- name: 5.2.14 - Configure SSH DenyGroups
-  lineinfile:
-    regexp: "^#?DenyGroups\\s+"
-    line: "DenyGroups {{ cis_sshd_deny_groups }}"
-    dest: "/etc/ssh/sshd_config"
-  when:
-    - sshd_config.stat.exists
-    - cis_sshd_deny_groups is defined and cis_sshd_deny_groups|trim != ""
-  notify: Restart sshd
+  when: sshd_config.stat.exists
+  notify:
+    - Restart sshd
   tags:
     - level-1
     - section-5

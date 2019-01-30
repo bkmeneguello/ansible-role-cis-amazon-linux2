@@ -1,4 +1,4 @@
-# Standards: 2.0.0
+# Standards: 1.0.0
 ---
 
 ###############################################
@@ -10,6 +10,9 @@ cis_apply_level_2_profile: false   # Whether Level 2 of the benchmark should be 
 
 cis_level_1_exclusions: []         # A list of Level 1 recommendations to exclude (i.e. ['1.1.1.1'])
 cis_level_2_exclusions: []         # A list of Level 2 recommendations to exclude
+
+cis_audit: true
+cis_remediation: true
 
 # Whether to fail when remediation items are found for recommendations which can't be automatically fixed.
 # If false, a debug message will be generated instead, with the preface *** ACTION REQUIRED ***..
@@ -58,7 +61,7 @@ cis_enable_chrony: false  # Set to true if chrony should be enabled/configured.
 cis_ntp_servers: []  # NTP server list to replace package defaults
 cis_ntp_pools: []  # NTP pool list to replace package defaults
 
-# 3.4.2
+# 3.3.2
 cis_hosts_allow_all_ips: "127.0.0.1"
 
 # 4.2.3
@@ -79,10 +82,10 @@ cis_syslog_ng_file_perms: "0640"
 cis_sshd_max_auth_tries: 4
 
 # 5.2.11
-cis_sshd_ciphers: "aes256-ctr,aes192-ctr,aes128-ctr"
+cis_sshd_ciphers: "chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr"
 
 # 5.2.12
-cis_sshd_macs: "hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256,umac-128@openssh.com"
+cis_sshd_macs: "hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512,hmac-sha2-256"
 
 # 5.2.13
 cis_sshd_client_alive_interval: 300

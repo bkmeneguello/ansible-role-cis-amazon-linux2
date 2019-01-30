@@ -1,7 +1,7 @@
-# Standards: 2.0.0
+# Standards: 1.0.0
 ---
 
-# 5.2.11 Ensure only approved MAC algorithms are used
+# 5.2.11 Ensure SSH PermitEmptyPasswords is disabled
 
 - include: stat_sshd_config.yml
   tags:
@@ -12,10 +12,10 @@
     - "5.2.11"
     - scored
 
-- name: 5.2.11 - Ensure only approved MAC algorithms are used
+- name: 5.2.11 - Ensure SSH PermitEmptyPasswords is disabled
   lineinfile:
-    regexp: "^MACs\\s+"
-    line: "MACs {{ cis_sshd_macs }}"
+    regexp: "^PermitEmptyPasswords\\s+"
+    line: "PermitEmptyPasswords no"
     dest: "/etc/ssh/sshd_config"
   when: sshd_config.stat.exists
   notify:

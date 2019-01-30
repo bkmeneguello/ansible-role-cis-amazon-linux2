@@ -1,11 +1,10 @@
-# Standards: 2.0.0
+# Standards: 1.0.0
 ---
 
 # 4.1.2 Ensure auditd service is enabled (Scored)
-- name: 4.1.2 - Ensure auditd service is enabled (Scored)
-  command: yum -q list audit
-  ignore_errors: true
-  register: auditd
+- name: 4.1.2 - Ensure auditd service is enabled
+  yum:
+    name: audit
   tags:
     - level-2
     - section-4
@@ -14,16 +13,13 @@
     - section-4.2.1.1
     - "4.2.1.1"
     - scored
-    - lint  # ANSIBLE0006, ANSIBLE0012
 
 - name: 4.1.2 - Ensure auditd service is enabled (Scored)
-  service:
+  systemd:
     name: "auditd"
     enabled: true
     state: started
-  when:
-    - not in_container
-    - auditd.rc is not defined or auditd.rc == 0
+  when: not in_container
   tags:
     - level-2
     - section-4
