@@ -6,7 +6,7 @@
 - name: 1.5.1 - Check if security limits file exists
   stat:
     path: "{{ cis_security_limits_filename }}"
-  register: security_limits_1_5_1
+  register: security_limits
   tags:
     - level-1
     - section-1
@@ -19,7 +19,7 @@
   copy:
     dest: "{{ cis_security_limits_filename }}"
     content: "* hard core 0\n"
-  when: security_limits_1_5_1.stat.exists is not defined or not security_limits_1_5_1.stat.exists
+  when: security_limits.stat.exists is not defined or not security_limits.stat.exists
   tags:
     - level-1
     - section-1
@@ -35,7 +35,7 @@
     limit_type: "hard"
     domain: "*"
     value: "0"
-  when: security_limits_1_5_1.stat.exists is defined and security_limits_1_5_1.stat.exists
+  when: security_limits.stat.exists is defined and security_limits.stat.exists
   tags:
     - level-1
     - section-1

@@ -5,7 +5,7 @@
 
 - name: 6.2.1 - Identify any accounts without passwords
   shell: "cat /etc/shadow | awk -F: '($2 == \"\" ) { print $1 }'"
-  register: accounts_6_2_1
+  register: accounts
   check_mode: false
   changed_when: false
   tags:
@@ -18,8 +18,8 @@
 
 - name: 6.2.1 - Lock any accounts without passwords
   command: "passwd -l {{ item }}"
-  with_items: "{{ accounts_6_2_1.stdout_lines }}"
-  when: accounts_6_2_1.stdout_lines is defined
+  with_items: "{{ accounts.stdout_lines }}"
+  when: accounts.stdout_lines is defined
   tags:
     - level-1
     - section-6

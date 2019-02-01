@@ -7,7 +7,7 @@
   command: yum -q list rsyslog
   ignore_errors: true
   when: cis_enable_rsyslog
-  register: rsyslog_4_2_1_1
+  register: rsyslog
   tags:
     - level-1
     - section-4
@@ -27,7 +27,7 @@
   when:
     - not in_container
     - cis_enable_rsyslog
-    - rsyslog_4_2_1_1.rc is not defined or rsyslog_4_2_1_1.rc == 0
+    - rsyslog.rc is not defined or rsyslog.rc == 0
   tags:
     - level-1
     - section-4

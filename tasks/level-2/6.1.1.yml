@@ -5,7 +5,7 @@
 
 - name: 6.1.1 - Audit system file permissions
   command: rpm -Va --nomtime --nosize --nomd5 --nolinkto
-  register: audit_6_1_1
+  register: audit
   tags:
     - level-2
     - section-6
@@ -17,9 +17,9 @@
 
 - name: 6.1.1 - Audit system file permissions
   fail:
-    msg: "{{ audit_6_1_1.stdout }}"
+    msg: "{{ audit.stdout }}"
   when:
-    - audit_6_1_1.stdout_lines is defined and audit_6_1_1.stdout_lines | length > 0
+    - audit.stdout_lines is defined and audit.stdout_lines | length > 0
     - fail_on_manual_remediation_actions
   tags:
     - level-2
@@ -31,9 +31,9 @@
 
 - name: 6.1.1 - Audit system file permissions
   debug:
-    msg: "*** ACTION REQUIRED *** {{ audit_6_1_1.stdout }}"
+    msg: "*** ACTION REQUIRED *** {{ audit.stdout }}"
   when:
-    - audit_6_1_1.stdout_lines is defined and audit_6_1_1.stdout_lines|length > 0
+    - audit.stdout_lines is defined and audit.stdout_lines|length > 0
     - not fail_on_manual_remediation_actions
   tags:
     - level-2

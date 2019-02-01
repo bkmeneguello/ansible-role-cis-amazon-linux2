@@ -6,7 +6,7 @@
 - name: 1.1.1.2 - Check if CIS modprobe configuration file exists
   stat:
     path: "{{ cis_modprobe_conf_filename }}"
-  register: modprobe_1_1_1_2
+  register: modprobe
   tags:
     - level-1
     - section-1
@@ -20,7 +20,7 @@
   copy:
     dest: "{{ cis_modprobe_conf_filename }}"
     content: "install freevxfs /bin/true\n"
-  when: modprobe_1_1_1_2.stat.exists is not defined or not modprobe_1_1_1_2.stat.exists
+  when: modprobe.stat.exists is not defined or not modprobe.stat.exists
   tags:
     - level-1
     - section-1
@@ -35,7 +35,7 @@
     dest: "{{ cis_modprobe_conf_filename }}"
     regexp: "^install freevxfs"
     line: "install freevxfs /bin/true"
-  when: modprobe_1_1_1_2.stat.exists is defined and modprobe_1_1_1_2.stat.exists
+  when: modprobe.stat.exists is defined and modprobe.stat.exists
   tags:
     - level-1
     - section-1

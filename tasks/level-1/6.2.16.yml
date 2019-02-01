@@ -7,7 +7,7 @@
   script: "{{ role_path }}/files/audit_6.2.16.sh"
   check_mode: false
   changed_when: false
-  register: audit_6_2_16
+  register: audit
   tags:
     - level-1
     - section-6
@@ -18,9 +18,9 @@
 
 - name: 6.2.16 - Ensure no duplicate UIDs exist
   fail:
-    msg: "{{ audit_6_2_16.stdout_lines }}"
+    msg: "{{ audit.stdout_lines }}"
   when:
-    - audit_6_2_16.stdout_lines is defined and audit_6_2_16.stdout_lines|length > 0
+    - audit.stdout_lines is defined and audit.stdout_lines|length > 0
     - fail_on_manual_remediation_actions
   tags:
     - level-1
@@ -32,9 +32,9 @@
 
 - name: 6.2.16 - Ensure no duplicate UIDs exist
   debug:
-    msg: "*** ACTION REQUIRED *** {{ audit_6_2_16.stdout }}"
+    msg: "*** ACTION REQUIRED *** {{ audit.stdout }}"
   when:
-    - audit_6_2_16.stdout_lines is defined and audit_6_2_16.stdout_lines|length > 0
+    - audit.stdout_lines is defined and audit.stdout_lines|length > 0
     - not fail_on_manual_remediation_actions
   tags:
     - level-1

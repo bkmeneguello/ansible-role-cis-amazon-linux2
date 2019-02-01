@@ -5,7 +5,7 @@
 - name: 4.1.2 Ensure auditd service is enabled (Scored)
   command: yum -q list audit
   ignore_errors: true
-  register: auditd_4_1_2
+  register: auditd
   tags:
     - level-2
     - section-4
@@ -23,7 +23,7 @@
     state: started
   when:
     - not in_container
-    - auditd_4_1_2.rc is not defined or auditd_4_1_2.rc == 0
+    - auditd.rc is not defined or auditd.rc == 0
   tags:
     - level-2
     - section-4

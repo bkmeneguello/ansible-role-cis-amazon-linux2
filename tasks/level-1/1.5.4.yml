@@ -6,7 +6,7 @@
 - name: Check if prelink binary exists
   command: which prelink
   ignore_errors: true
-  register: which_1_5_4
+  register: which
   tags:
     - level-1
     - section-1
@@ -18,7 +18,7 @@
 
 - name: Restore prelinked binaries
   command: prelink -ua
-  when: which_1_5_4.rc is defined and which_1_5_4.rc == 0
+  when: which.rc is defined and which.rc == 0
   tags:
     - level-1
     - section-1

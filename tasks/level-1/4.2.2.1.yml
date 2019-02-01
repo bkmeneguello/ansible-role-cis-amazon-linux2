@@ -6,7 +6,7 @@
 - name: 4.2.2.1 - Check if syslog-ng is installed
   command: yum -q list syslog-ng
   ignore_errors: true
-  register: syslog_ng_4_2_2_1
+  register: syslog_ng
   when: cis_enable_syslog_ng
   tags:
     - level-1
@@ -26,8 +26,8 @@
   when:
     - not in_container
     - cis_enable_syslog_ng
-    - syslog_ng_4_2_2_1 is defined
-    - syslog_ng_4_2_2_1.rc is not defined or syslog_ng_4_2_2_1.rc == 0
+    - syslog_ng is defined
+    - syslog_ng.rc is not defined or syslog_ng.rc == 0
   tags:
     - level-1
     - section-4
