@@ -10,6 +10,7 @@
     - level-1
     - section-6
     - section-6.1
+    - section-6.1.10
     - "6.1.10"
     - scored
     - non-idempotent
@@ -25,6 +26,7 @@
     - level-1
     - section-6
     - section-6.1
+    - section-6.1.10
     - "6.1.10"
     - scored
 
@@ -38,5 +40,6 @@
     - level-1
     - section-6
     - section-6.1
+    - section-6.1.10
     - "6.1.10"
     - scored

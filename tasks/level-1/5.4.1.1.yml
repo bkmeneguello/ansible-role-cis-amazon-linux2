@@ -13,6 +13,7 @@
     - section-5
     - section-5.4
     - section-5.4.1
+    - section-5.4.1.1
     - "5.4.1.1"
     - scored
 
@@ -26,6 +27,7 @@
     - section-5
     - section-5.4
     - section-5.4.1
+    - section-5.4.1.1
     - "5.4.1.1"
     - scored
 
@@ -37,6 +39,7 @@
     - section-5
     - section-5.4
     - section-5.4.1
+    - section-5.4.1.1
     - "5.4.1.1"
     - scored
     - lint  # ANSIBLE0012

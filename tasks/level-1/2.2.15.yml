@@ -11,6 +11,7 @@
     - level-1
     - section-2
     - section-2.2
+    - section-2.2.15
     - "2.2.15"
     - scored
     - lint  # ANSIBLE0012
@@ -25,6 +26,7 @@
     - level-1
     - section-2
     - section-2.2
+    - section-2.2.15
     - "2.2.15"
     - scored
 
@@ -38,5 +40,6 @@
     - level-1
     - section-2
     - section-2.2
+    - section-2.2.15
     - "2.2.15"
     - scored

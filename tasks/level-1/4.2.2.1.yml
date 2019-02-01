@@ -13,6 +13,7 @@
     - section-4
     - section-4.2
     - section-4.2.2
+    - section-4.2.2.1
     - "4.2.2.1"
     - scored
     - lint  # ANSIBLE0006
@@ -32,5 +33,6 @@
     - section-4
     - section-4.2
     - section-4.2.2
+    - section-4.2.2.1
     - "4.2.2.1"
     - scored

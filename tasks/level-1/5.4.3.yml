@@ -12,6 +12,7 @@
     - level-1
     - section-5
     - section-5.4
+    - section-5.4.3
     - "5.4.3"
     - scored
 
@@ -22,6 +23,7 @@
     - level-1
     - section-5
     - section-5.4
+    - section-5.4.3
     - "5.4.3"
     - scored
     - non-idempotent
