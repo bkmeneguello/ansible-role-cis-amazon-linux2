@@ -1,4 +1,4 @@
-# Standards: 0.11
+# Standards: 2.0.0
 ---
 
 # 5.2.13 Ensure SSH LoginGraceTime is set to one minute or less

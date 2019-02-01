@@ -1,4 +1,4 @@
-# Standards: 0.11
+# Standards: 2.0.0
 ---
 
 # 1.1.12 Ensure separate partition exists for /var/log/audit (Scored)
