@@ -5,10 +5,8 @@
 
 - name: 3.2.7 - Ensure Reverse Path Filtering is enabled
   sysctl:
-    ignoreerrors: true
     name: "{{ item.key }}"
     value: "{{ item.value }}"
-    state: present
   with_dict:
     "net.ipv4.conf.all.rp_filter": 1
     "net.ipv4.conf.default.rp_filter": 1

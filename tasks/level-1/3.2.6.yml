@@ -5,10 +5,8 @@
 
 - name: 3.2.6 - Ensure bogus ICMP responses are ignored
   sysctl:
-    ignoreerrors: true
     name: "{{ item.key }}"
     value: "{{ item.value }}"
-    state: present
   with_dict:
     "net.ipv4.icmp_ignore_bogus_error_responses": 1
     "net.ipv4.route.flush": 1

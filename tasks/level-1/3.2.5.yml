@@ -5,10 +5,8 @@
 
 - name: 3.2.5 - Ensure broadcast ICMP requests are ignored
   sysctl:
-    ignoreerrors: true
     name: "{{ item.key }}"
     value: "{{ item.value }}"
-    state: present
   with_dict:
     "net.ipv4.icmp_echo_ignore_broadcasts": 1
     "net.ipv4.route.flush": 1

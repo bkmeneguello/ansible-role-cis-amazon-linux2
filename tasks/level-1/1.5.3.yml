@@ -5,10 +5,8 @@
 
 - name: 1.5.3 - Ensure address space layout randomization is enabled
   sysctl:
-    ignoreerrors: true
     name: kernel.randomize_va_space
     value: 2
-    state: present
   when: not in_container
   tags:
     - level-1

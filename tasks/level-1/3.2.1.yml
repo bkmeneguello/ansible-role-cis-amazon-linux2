@@ -5,10 +5,8 @@
 
 - name: 3.2.1 - Ensure source routed packets are not accepted
   sysctl:
-    ignoreerrors: true
     name: "{{ item.key }}"
     value: "{{ item.value }}"
-    state: present
   with_dict:
     "net.ipv4.conf.all.accept_source_route": 0
     "net.ipv4.conf.default.accept_source_route": 0

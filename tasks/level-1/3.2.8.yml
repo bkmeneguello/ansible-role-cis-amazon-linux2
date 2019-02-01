@@ -5,10 +5,8 @@
 
 - name: 3.2.8 - Ensure TCP SYN Cookies is enabled
   sysctl:
-    ignoreerrors: true
     name: "{{ item.key }}"
     value: "{{ item.value }}"
-    state: present
   with_dict:
     "net.ipv4.tcp_syncookies": 1
     "net.ipv4.route.flush": 1

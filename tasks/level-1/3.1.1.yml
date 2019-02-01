@@ -5,10 +5,8 @@
 
 - name: 3.1.1 - Ensure IP forwarding is disabled in active kernel parameters
   sysctl:
-    ignoreerrors: true
     name: "{{ item.key }}"
     value: "{{ item.value }}"
-    state: present
   with_dict:
     "net.ipv4.ip_forward": 0
     "net.ipv4.route.flush": 1

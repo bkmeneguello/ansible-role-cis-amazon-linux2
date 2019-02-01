@@ -46,10 +46,8 @@
 
 - name: 1.5.1 - Prevent suid programs from dumping core
   sysctl:
-    ignoreerrors: true
     name: fs.suid_dumpable
     value: 0
-    state: present
   when: not in_container
   tags:
     - level-1
