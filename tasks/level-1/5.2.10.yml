@@ -1,7 +1,7 @@
 # Standards: 0.11
 ---
 
-# 5.2.10 - Ensure SSH PermitUserEnvironment is disabled
+# 5.2.10 Ensure SSH PermitUserEnvironment is disabled
 
 - include: stat_sshd_config.yml
   tags:

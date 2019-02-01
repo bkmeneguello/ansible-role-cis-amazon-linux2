@@ -3,7 +3,7 @@
 
 # 1.1.11 Ensure separate partition exists for /var/log (Scored)
 
-- name: 1.1.11 Ensure separate partition exists for /var/log (Scored)
+- name: 1.1.11 - Ensure separate partition exists for /var/log (Scored)
   mount:
     name: "{{ item.mountpoint }}"
     state: present

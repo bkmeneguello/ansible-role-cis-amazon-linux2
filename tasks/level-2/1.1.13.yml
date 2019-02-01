@@ -3,7 +3,7 @@
 
 # 1.1.13 Ensure separate partition exists for /home (Scored)
 
-- name: 1.1.13 Ensure separate partition exists for /home (Scored)
+- name: 1.1.13 - Ensure separate partition exists for /home (Scored)
   mount:
     name: "{{ item.mountpoint }}"
     state: present

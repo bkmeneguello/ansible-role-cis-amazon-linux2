@@ -3,7 +3,7 @@
 
 # 1.6.1.2. Ensure the SELinux state is enforcing (Scored)
 
-- name: 1.6.1.2 Ensure the SELinux state is enforcing (Scored)
+- name: 1.6.1.2 - Ensure the SELinux state is enforcing (Scored)
   selinux:
     policy: targeted
     state: enforcing

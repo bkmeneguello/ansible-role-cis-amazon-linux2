@@ -3,7 +3,7 @@
 
 # 1.6.1.6 Ensure no unconfined daemons exist (Scored)
 
-- name: 1.6.1.6 Ensure no unconfined daemons exist (Scored)
+- name: 1.6.1.6 - Ensure no unconfined daemons exist (Scored)
   script: "{{ role_path }}/files/audit_1.6.1.6.sh"
   check_mode: false
   changed_when: false
@@ -17,7 +17,7 @@
     - "1.6.1.6"
     - scored
 
-- name: 1.6.1.6 Ensure no unconfined daemons exist (Scored)
+- name: 1.6.1.6 - Ensure no unconfined daemons exist (Scored)
   fail:
     msg: "{{ audit.stdout_lines }}"
   when:
@@ -32,7 +32,7 @@
     - "1.6.1.6"
     - scored
 
-- name: 1.6.1.6 Ensure no unconfined daemons exist (Scored)
+- name: 1.6.1.6 - Ensure no unconfined daemons exist (Scored)
   debug:
     msg: "*** ACTION REQUIRED *** {{ audit.stdout }}"
   when:

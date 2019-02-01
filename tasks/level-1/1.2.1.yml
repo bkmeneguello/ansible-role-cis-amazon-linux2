@@ -1,7 +1,7 @@
 # Standards: 0.11
 ---
 
-# 1.2.1 - Ensure package manager repositories are configured
+# 1.2.1 Ensure package manager repositories are configured
 
 # The remediation actions for this recommendation are site-specific, therefore we test that
 # executing 'yum repolist' results in no errors.

@@ -1,7 +1,7 @@
 # Standards: 0.11
 ---
 
-# 1.2.3 - Ensure gpgcheck is globally activated
+# 1.2.3 Ensure gpgcheck is globally activated
 
 - name: 1.2.3 - Get all repos on remote host
   find:

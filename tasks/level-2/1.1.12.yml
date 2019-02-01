@@ -3,7 +3,7 @@
 
 # 1.1.12 Ensure separate partition exists for /var/log/audit (Scored)
 
-- name: 1.1.12 Ensure separate partition exists for /var/log/audit (Scored)
+- name: 1.1.12 - Ensure separate partition exists for /var/log/audit (Scored)
   mount:
     name: "{{ item.mountpoint }}"
     state: present

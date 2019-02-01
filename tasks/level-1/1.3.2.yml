@@ -1,7 +1,7 @@
 # Standards: 0.11
 ---
 
-# 1.3.2 - Ensure filesystem integrity is regularly checked
+# 1.3.2 Ensure filesystem integrity is regularly checked
 
 - name: 1.3.2 - Ensure cron is installed
   yum:

@@ -1,7 +1,7 @@
 # Standards: 0.11
 ---
 
-# 1.4.3 - Ensure interactive boot is not enabled
+# 1.4.3 Ensure interactive boot is not enabled
 
 - name: 1.4.3 - Check if sysconfig init file exists
   stat:

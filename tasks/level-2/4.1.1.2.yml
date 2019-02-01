@@ -16,7 +16,7 @@
     - "4.1.1.2"
     - scored
 
-- name: 4.1.1.2 Ensure system is disabled when audit logs are full (Scored)
+- name: 4.1.1.2 - Ensure system is disabled when audit logs are full (Scored)
   lineinfile:
     regexp: "{{ item.regexp }}"
     line: "{{ item.line }}"

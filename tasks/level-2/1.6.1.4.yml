@@ -3,7 +3,7 @@
 
 # 1.6.1.4 Ensure SETroubleshoot is not installed (Scored)
 
-- name: 1.6.1.4 Ensure SETroubleshoot is not installed (Scored)
+- name: 1.6.1.4 - Ensure SETroubleshoot is not installed (Scored)
   yum:
     name: setroubleshoot
     state: removed

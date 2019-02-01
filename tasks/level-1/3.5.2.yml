@@ -1,7 +1,7 @@
 # Standards: 0.11
 ---
 
-# 3.5.2 - Ensure SCTP is disabled
+# 3.5.2 Ensure SCTP is disabled
 
 - name: 3.5.2 - Check if CIS modprobe configuration file exists
   stat:
