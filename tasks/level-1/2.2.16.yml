@@ -8,7 +8,9 @@
     name: "ypserv"
     enabled: false
     state: stopped
-  ignore_errors: true
+  register: service
+  failed_when: service is failed and not 'Could not find the requested service' in service.msg
+  when: not in_container
   tags:
     - level-1
     - section-2

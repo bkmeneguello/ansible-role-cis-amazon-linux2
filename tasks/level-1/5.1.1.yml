@@ -20,7 +20,7 @@
     name: "crond"
     enabled: true
     state: started
-  ignore_errors: false
+  when: not in_container
   tags:
     - level-1
     - section-5

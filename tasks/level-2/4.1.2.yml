@@ -22,8 +22,8 @@
     enabled: true
     state: started
   when:
+    - not in_container
     - auditd_4_1_2.rc is not defined or auditd_4_1_2.rc == 0
-  ignore_errors: false
   tags:
     - level-2
     - section-4

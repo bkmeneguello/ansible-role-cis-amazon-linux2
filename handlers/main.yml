@@ -5,13 +5,16 @@
   service:
     name: sshd
     state: restarted
+  when: not in_container
 
 - name: Restart rsyslog
   service:
     name: rsyslog
     state: restarted
+  when: not in_container
 
 - name: Restart auditd
   service:
     name: auditd
     state: restarted
+  when: not in_container

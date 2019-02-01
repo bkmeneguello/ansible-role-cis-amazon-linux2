@@ -20,3 +20,6 @@ cis_audit_auditd_filename: "/etc/audit/auditd.conf"
 cis_audit_rules_filename: "/etc/audit/audit.rules"
 
 full_upgrade: true
+in_container: "{{ ansible_virtualization_role is defined and
+                  ansible_virtualization_role == 'guest' and
+                  ansible_virtualization_type in ['lxc', 'docker'] }}"

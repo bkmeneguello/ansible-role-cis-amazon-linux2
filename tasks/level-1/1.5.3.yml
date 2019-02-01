@@ -9,9 +9,7 @@
     name: kernel.randomize_va_space
     value: 2
     state: present
-  when: >
-    ansible_virtualization_role is undefined or
-    not (ansible_virtualization_role == 'guest' and ansible_virtualization_type in ['lxc', 'docker'])
+  when: not in_container
   tags:
     - level-1
     - section-1
